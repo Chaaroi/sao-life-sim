@@ -9,10 +9,15 @@ class SoundController {
   }
 
   init() {
-    if (!this.ctx) {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (AudioCtx) this.ctx = new AudioCtx();
-    }
+    try {
+      if (!this.ctx) {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (AudioCtx) this.ctx = new AudioCtx();
+      }
+      if (this.ctx && this.ctx.state === 'suspended') {
+        this.ctx.resume();
+      }
+    } catch (e) {}
   }
 
   playTone(freq, type, duration, delay = 0) {
@@ -191,7 +196,7 @@ function getRandomBackground() {
 
 // Roll Character
 function performRoll() {
-  sfx.saoSelect();
+  try { sfx.saoSelect(); } catch(e) {}
   const bg = getRandomBackground();
   const wp = getRandomItem(WEAPONS);
 
@@ -205,16 +210,16 @@ function performRoll() {
   player.floor = 1;
   player.path = 'none';
 
-  // Render Roll Screen
-  el.rollName.textContent = player.name;
-  el.rollBgTitle.textContent = bg.name;
-  el.rollBgDesc.textContent = bg.description;
-  el.rollWpTitle.textContent = wp.name;
-  el.rollWpDesc.textContent = `คุณสมบัติ: ${wp.statBonus}`;
-  el.rollHp.textContent = `${player.hp} / ${player.maxHp}`;
-  el.rollCol.textContent = `${player.col} Col`;
-  el.rollSanity.textContent = `${player.sanity}%`;
-  el.rollCourage.textContent = player.courage;
+  // Render Roll Screen Safely
+  if (el.rollName) el.rollName.textContent = player.name;
+  if (el.rollBgTitle) el.rollBgTitle.textContent = bg.name;
+  if (el.rollBgDesc) el.rollBgDesc.textContent = bg.description;
+  if (el.rollWpTitle) el.rollWpTitle.textContent = wp.name;
+  if (el.rollWpDesc) el.rollWpDesc.textContent = `คุณสมบัติ: ${wp.statBonus}`;
+  if (el.rollHp) el.rollHp.textContent = `${player.hp} / ${player.maxHp}`;
+  if (el.rollCol) el.rollCol.textContent = `${player.col} Col`;
+  if (el.rollSanity) el.rollSanity.textContent = `${player.sanity}%`;
+  if (el.rollCourage) el.rollCourage.textContent = player.courage;
 }
 
 // Update Game HUD
@@ -387,48 +392,69 @@ function renderGallery() {
 }
 
 // Event Listeners
-el.startBtn.addEventListener('click', () => {
-  sfx.click();
-  const name = el.playerNameInput.value.trim();
-  if (name) player.name = name;
-  performRoll();
-  showScreen(el.screenRoll);
-});
+if (el.startBtn) {
+  el.startBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    try { sfx.click(); } catch(err) {}
+    const name = el.playerNameInput ? el.playerNameInput.value.trim() : '';
+    if (name) player.name = name;
+    performRoll();
+    showScreen(el.screenRoll);
+  });
+}
 
-el.rerollBtn.addEventListener('click', () => {
-  performRoll();
-});
+if (el.rerollBtn) {
+  el.rerollBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    performRoll();
+  });
+}
 
-el.confirmRollBtn.addEventListener('click', () => {
-  sfx.saoSelect();
-  showScreen(el.screenGame);
-  loadEvent('day1_intro');
-});
+if (el.confirmRollBtn) {
+  el.confirmRollBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    try { sfx.saoSelect(); } catch(err) {}
+    showScreen(el.screenGame);
+    loadEvent('day1_intro');
+  });
+}
 
-el.nextBtn.addEventListener('click', () => {
-  sfx.click();
-  if (pendingNextEvent === 'trigger_endings') {
-    triggerGameEnding();
-  } else if (pendingNextEvent) {
-    loadEvent(pendingNextEvent);
-  }
-});
+if (el.nextBtn) {
+  el.nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    try { sfx.click(); } catch(err) {}
+    if (pendingNextEvent === 'trigger_endings') {
+      triggerGameEnding();
+    } else if (pendingNextEvent) {
+      loadEvent(pendingNextEvent);
+    }
+  });
+}
 
-el.endingRestartBtn.addEventListener('click', () => {
-  sfx.click();
-  showScreen(el.screenTitle);
-});
+if (el.endingRestartBtn) {
+  el.endingRestartBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    try { sfx.click(); } catch(err) {}
+    showScreen(el.screenTitle);
+  });
+}
 
-el.openGalleryBtn.addEventListener('click', () => {
-  sfx.click();
-  renderGallery();
-  el.galleryModal.classList.add('active');
-});
+if (el.openGalleryBtn) {
+  el.openGalleryBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    try { sfx.click(); } catch(err) {}
+    renderGallery();
+    el.galleryModal.classList.add('active');
+  });
+}
 
-el.closeGalleryBtn.addEventListener('click', () => {
-  sfx.click();
-  el.galleryModal.classList.remove('active');
-});
+if (el.closeGalleryBtn) {
+  el.closeGalleryBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    try { sfx.click(); } catch(err) {}
+    el.galleryModal.classList.remove('active');
+  });
+}
 
 // Sound Toggle
 const soundBtn = document.getElementById('sound-toggle-btn');
