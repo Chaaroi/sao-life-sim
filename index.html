@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1 ใน 10,000 — Aincrad Life Simulator (Sword Art Online)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚔️</text></svg>">
+</head>
+<body>
+
+  <!-- Top HUD Bar -->
+  <header class="sao-hud-header">
+    <div class="logo-tag">
+      ⚔️ <span>1 IN 10,000</span>
+      <span class="version-badge">SAO SIM</span>
+    </div>
+    <div class="hud-actions">
+      <button id="sound-toggle-btn" class="hud-btn">🔊 SFX: ON</button>
+      <button id="open-gallery-btn" class="hud-btn">🏆 ฉากจบที่ปลดล็อก</button>
+    </div>
+  </header>
+
+  <!-- Main Game Container -->
+  <main class="game-container">
+
+    <!-- 1. Title Screen -->
+    <section id="screen-title" class="screen active">
+      <div class="title-card">
+        <div class="title-sub">NERVEGEAR SYSTEM INITIALIZING...</div>
+        <h1 class="title-main">1 ใน <span class="glow-orange">10,000</span></h1>
+        <p style="font-family:'Orbitron', sans-serif; color:var(--sao-orange); font-size:1.1rem; letter-spacing:2px; margin-bottom:15px;">
+          AINCRAD SURVIVAL SIMULATOR
+        </p>
+        <p class="title-lore">
+          6 พฤศจิกายน 2022 — คุณคือ 1 ใน 10,000 คนแรกที่สวมเครื่อง NerveGear ล็อกอินเข้าสู่เกม Sword Art Online... 
+          แต่แล้วปุ่ม Logout กลับหายไป! หาก HP ของคุณเหลือ 0 คลื่นไมโครเวฟจะทำลายสมองของคุณในโลกความเป็นจริงทันที!
+          คุณจะเอาชีวิตรอด ร่ำรวย หรือดับสูญในปราสาทลอยฟ้า 100 ชั้นแห่งนี้?
+        </p>
+
+        <div class="input-group">
+          <label class="input-label" for="player-name-input">👤 ชื่อตัวละครของคุณ (Username)</label>
+          <input type="text" id="player-name-input" class="sao-input" placeholder="ใส่ชื่อ เช่น Kirito, Asuna, Klein..." value="Kirigaya">
+        </div>
+
+        <button id="start-btn" class="start-btn">⚡ LINK START! (เริ่มเกม)</button>
+      </div>
+    </section>
+
+    <!-- 2. Character Roll Screen -->
+    <section id="screen-roll" class="screen">
+      <div class="roll-panel">
+        <div class="roll-header">
+          <h2>🎲 สุ่มสถานะตัวละครใน 10,000 คน</h2>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px;">
+            ตัวตนและพรสวรรค์ตั้งต้นที่คุณได้รับในการล็อกอินเข้าสู่ Aincrad
+          </p>
+        </div>
+
+        <div class="roll-grid">
+          <!-- Background Card -->
+          <div class="roll-card active-card">
+            <div class="card-label">พื้นเพของผู้เล่น (Background)</div>
+            <div id="roll-bg-title" class="card-val">Beta Tester</div>
+            <div id="roll-bg-desc" class="card-desc">...</div>
+          </div>
+
+          <!-- Weapon Card -->
+          <div class="roll-card">
+            <div class="card-label">อาวุธตั้งต้นที่ได้รับ (Initial Weapon)</div>
+            <div id="roll-wp-title" class="card-val">One-Handed Sword</div>
+            <div id="roll-wp-desc" class="card-desc">...</div>
+          </div>
+        </div>
+
+        <!-- Initial Stats Preview -->
+        <div class="stats-row" style="margin-bottom:25px;">
+          <div class="stat-item">
+            <div class="stat-name">HP ตั้งต้น</div>
+            <div id="roll-hp" class="stat-val" style="color:var(--hp-green)">120 / 120</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-name">เงินเริ่มต้น (Col)</div>
+            <div id="roll-col" class="stat-val" style="color:#ffcc00">800 Col</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-name">สภาพจิตใจ (Sanity)</div>
+            <div id="roll-sanity" class="stat-val" style="color:var(--sao-cyan)">90%</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-name">ความกล้าหาญ (Courage)</div>
+            <div id="roll-courage" class="stat-val" style="color:#ff7700">80</div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; gap:15px; flex-wrap:wrap;">
+          <button id="reroll-btn" class="hud-btn" style="padding:12px 24px;">🔄 สุ่มตัวละครใหม่ (Reroll)</button>
+          <button id="confirm-roll-btn" class="start-btn" style="padding:12px 35px;">⚔️ ยืนยันตัวละคร & เข้าสู่เกม</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Story & Game HUD Screen -->
+    <section id="screen-game" class="screen">
+      <!-- HUD Stats Bar -->
+      <div class="hud-bar">
+        <div class="player-meta">
+          <div class="player-name-tag">
+            <span id="hud-player-name">Kirigaya</span>
+            <span id="hud-path-tag" class="path-badge">ผู้เล่นอิสระ</span>
+          </div>
+          <div id="hud-floor" style="font-family:'Orbitron', sans-serif; font-weight:700; color:var(--sao-orange);">
+            ชั้น 1
+          </div>
+        </div>
+
+        <!-- SAO HP Bar -->
+        <div class="sao-hp-container">
+          <div class="hp-info-row">
+            <span class="hp-label">HP [HIT POINTS]</span>
+            <span id="hud-hp-text" class="hp-numbers">120 / 120</span>
+          </div>
+          <div class="hp-bar-bg">
+            <div id="hud-hp-bar" class="hp-bar-fill"></div>
+          </div>
+        </div>
+
+        <!-- Secondary Stats -->
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-name">เงินในกระเป๋า</div>
+            <div id="hud-col" class="stat-val" style="color:#ffcc00">500 Col</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-name">สติ / กำลังใจ</div>
+            <div id="hud-sanity" class="stat-val" style="color:var(--sao-cyan)">80%</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-name">ความกล้าหาญ</div>
+            <div id="hud-courage" class="stat-val" style="color:#ff7700">50</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-name">เป้าหมาย</div>
+            <div class="stat-val" style="font-size:0.85rem; color:#fff;">พิชิต 100 ชั้น</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story Narrative Box -->
+      <div class="story-panel">
+        <span id="story-phase" class="phase-badge">วันที่ 1: 6 พ.ย. 2022</span>
+        <h2 id="story-title" class="story-title">...</h2>
+        <p id="story-desc" class="story-desc">...</p>
+
+        <!-- Choices Container -->
+        <div id="choices-box" class="choices-container"></div>
+
+        <!-- Feedback Alert Box -->
+        <div id="feedback-box" class="feedback-box">
+          <p id="feedback-text" class="feedback-text">...</p>
+          <button id="next-btn" class="next-btn">ดำเนินชีวิตต่อไป... ▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Ending Screen -->
+    <section id="screen-ending" class="screen">
+      <div class="ending-panel">
+        <div id="ending-icon" class="ending-icon">💀</div>
+        <div>
+          <span id="ending-badge" class="ending-type-badge badge-bad">BAD END</span>
+        </div>
+        <h2 id="ending-title" class="ending-title">...</h2>
+        <p id="ending-desc" class="ending-desc">...</p>
+
+        <div class="ending-actions">
+          <button id="ending-restart-btn" class="start-btn">🔄 เล่นใหม่อีกครั้ง (New Life)</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Gallery Modal -->
+  <div id="gallery-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>🏆 บันทึกฉากจบแห่ง Aincrad (Ending Gallery)</h3>
+        <button id="close-gallery-btn" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="gallery-count" style="color:var(--sao-orange); font-weight:600; margin-bottom:15px; font-size:0.95rem;">
+          ปลดล็อกแล้ว 0 / 25 ฉากจบ
+        </p>
+        <div id="gallery-grid" class="gallery-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data/story.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
