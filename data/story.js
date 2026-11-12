@@ -79,6 +79,8 @@ const EVENTS = [
     id: 'day1_intro',
     phase: 'วันที่ 1: 6 พ.ย. 2022',
     floor: 1,
+    scene: 'scene_kayaba_red_sky',
+    location: 'จัตุรัสกลางเมืองเริ่มต้น (Town of Beginnings)',
     title: 'ประกาศมรณะของ คายาบะ อากิฮิโกะ',
     description: 'ท้องฟ้าเปลี่ยนเป็นสีแดงชาด เลือดหยดลงมากลายเป็นร่างยักษ์ไร้ใบหน้าในชุดคลุมสีแดง คายาบะ อากิฮิโกะ ผู้สร้างเกมประกาศตัดปุ่ม Logout ทิ้ง: "หาก HP กลายเป็น 0 เนิร์ฟเกียร์จะยิงคลื่นไมโครเวฟทำลายสมองของคุณในโลกจริง ทางเดียวที่จะรอดคือพิชิตชั้นที่ 100!" ผู้เล่น 10,000 คนกรีดร้องด้วยความสยองขวัญ',
     choices: [
@@ -106,6 +108,8 @@ const EVENTS = [
     id: 'day1_boar',
     phase: 'วันที่ 1: นอกเมืองเริ่มต้น',
     floor: 1,
+    scene: 'scene_grassland_boar',
+    location: 'ทุ่งหญ้าตะวันตก ชั้นที่ 1',
     title: 'การล่า Frenzy Boar ครั้งแรก',
     description: 'คุณยืนเผชิญหน้ากับหมูป่าเขี้ยวตัน (Frenzy Boar) เลเวล 1 นอกประตูเมือง เมื่อรู้ว่าความเจ็บปวดและการตายเป็นเรื่องจริง มือของคุณที่กำด้ามอาวุธจึงสั่นเทาอย่างควบคุมไม่ได้!',
     choices: [
@@ -133,6 +137,8 @@ const EVENTS = [
     id: 'day1_party',
     phase: 'วันที่ 1: จัตุรัสกลางเมือง',
     floor: 1,
+    scene: 'scene_town_street',
+    location: 'จัตุรัสกลางเมืองเริ่มต้น ชั้นที่ 1',
     title: 'พบเจอกลุ่มผู้เล่นร่วมชะตากรรม',
     description: 'ที่จัตุรัสกลางเมือง คุณพบกับกลุ่มผู้เล่นที่กำลังจับกลุ่มพูดคุยกันอย่างสิ้นหวัง หนึ่งในนั้นมีชายหนุ่มโพกผ้าสีแดงท่าทางเป็นมิตร (หน้าตาคล้าย ไคลน์ แห่งกิลด์ฟูรินคาซัน) กำลังปลอบใจเพื่อนๆ ของเขา',
     choices: [
@@ -154,6 +160,8 @@ const EVENTS = [
     id: 'day1_hide',
     phase: 'วันที่ 1: ห้องพักในเมือง',
     floor: 1,
+    scene: 'scene_town_inn',
+    location: 'โรงแรม Safe Zone เมืองเริ่มต้น',
     title: 'ค่ำคืนแรกแห่งฝันร้าย',
     description: 'คุณนอนมองเพดานห้องพักในเมืองเริ่มต้น เสียงไซเรนและเสียงกรีดร้องดังแว่วมาจากนอกหน้าต่างเป็นระยะ คุณเปิดเมนูดูช่องเก็บของ มีเพียงขนมปังหยาบๆ 1 ก้อนกับน้ำเปล่า 1 ขวด',
     choices: [
@@ -177,6 +185,8 @@ const EVENTS = [
     id: 'week1_nervegear_scare',
     phase: 'สัปดาห์ที่ 1: ข่าวร้ายกระแทกใจ',
     floor: 1,
+    scene: 'scene_town_inn',
+    location: 'ห้องพักเมืองเริ่มต้น ชั้นที่ 1',
     title: 'สัญญาณไฟสีแดงกับความตายจากโลกจริง',
     description: 'มีเสียงระฆังดังขึ้นจากหอคอยกลางเมือง ข่าวแพร่สะพัดว่าผู้เล่นหลายร้อยคนที่หายไป ไม่ได้หลุดออกไป แต่เป็นเพราะญาติในโลกจริงพยายามดึงสายไฟหรือถอดหมวก ทำให้ระบบความปลอดภัยยิงคลื่นไมโครเวฟทำลายสมองตายทันที!',
     choices: [
@@ -198,6 +208,8 @@ const EVENTS = [
     id: 'week1_coper',
     phase: 'สัปดาห์ที่ 1: ชายลึกลับชวนเข้าปาร์ตี้',
     floor: 1,
+    scene: 'scene_grassland_coper',
+    location: 'หุบเขาลึกลับ ชั้นที่ 1',
     title: 'กับดักของ Coper',
     description: 'ขณะกำลังเดินหาที่ฟาร์ม ผู้เล่นคนหนึ่งชื่อ "Coper" เดินเข้ามาทักทาย อ้างว่าเป็นอดีตเบต้าเทสเตอร์ ชวนคุณไปล่าในโซนลับที่มีมอนสเตอร์ดรอปเงินเยอะเป็นพิเศษ แต่ทางข้างหน้าดูลึกและอันตรายผิดปกติ...',
     choices: [
@@ -219,6 +231,8 @@ const EVENTS = [
     id: 'week1_monument',
     phase: 'สัปดาห์ที่ 1: ปราสาทเหล็กสีดำ (Black Iron Palace)',
     floor: 1,
+    scene: 'scene_black_iron_palace',
+    location: 'ปราสาทเหล็กสีดำ (Black Iron Palace)',
     title: 'อนุสาวรีย์แห่งชีวิต (Monument of Life)',
     description: 'คุณเดินเข้าไปในปราสาทเหล็กสีดำ มีแผ่นหินยักษ์สลักชื่อผู้เล่นทั้ง 10,000 คน ตอนนี้มีเส้นสีดำขีดฆ่าชื่อผู้เล่นไปแล้วเกือบพันคน พร้อมระบุสาเหตุการตาย: "โดนหมูป่าสังหาร", "ตกหน้าผา", "สัญญาณสมองขาดหาย"...',
     choices: [
@@ -242,6 +256,8 @@ const EVENTS = [
     id: 'month1_meeting',
     phase: 'เดือนที่ 1: เมืองโทลบานา (Tolbana)',
     floor: 1,
+    scene: 'scene_amphitheater',
+    location: 'อัฒจันทร์เมืองโทลบานา (Tolbana) ชั้นที่ 1',
     title: 'การประชุมวางแผนพิชิตบอสชั้น 1 ของ เดียร์เบล (Diavel)',
     description: 'อัศวินผมสีฟ้า เดียร์เบล รวบรวมผู้เล่นแถวหน้ามาประชุมที่อัฒจันทร์กลางแจ้งในเมืองโทลบานา เพื่อจัดปาร์ตี้บุกห้องบอสชั้น 1 "Illfang the Kobold Lord" ในกลุ่มมีนักดาบชุดดำนั่งอยู่คนเดียว (คิริโตะ) และสาวสวมผ้าคลุมหน้ามิดชิด (อาสึนะ)',
     choices: [
@@ -269,6 +285,8 @@ const EVENTS = [
     id: 'month1_boss_illfang',
     phase: 'เดือนที่ 1: ห้องบอสชั้น 1',
     floor: 1,
+    scene: 'scene_boss_floor1',
+    location: 'ห้องบอสชั้นที่ 1 (Illfang Kobold Lord)',
     title: 'การต่อสู้กับ Illfang the Kobold Lord & ความตายของเดียร์เบล',
     description: 'บอสยักษ์ Illfang เงื้อขวานยักษ์คำรามลั่น! เมื่อเลือดหลอดสุดท้ายของบอสลดลง เดียร์เบลพุ่งเข้าไปเพื่อหวัง Last Attack แต่บอสกลับเปลี่ยนอาวุธเป็นดาบโค้งโคดะจิ (ผิดจากข้อมูลรอบเบต้า) ฟันเดียร์เบลจนเลือดหมดหลอดสลายไปต่อหน้าต่อตา! นักดาบชุดดำและสาวคลุมหน้าจึงพุ่งเข้าปิดฉากบอสแทน!',
     choices: [
@@ -296,6 +314,8 @@ const EVENTS = [
     id: 'month1_beater',
     phase: 'เดือนที่ 1: บทสรุปชั้น 1',
     floor: 1,
+    scene: 'scene_boss_floor1',
+    location: 'บันไดขึ้นสู่ชั้นที่ 2',
     title: 'กำเนิด "Beater" (บีทเตอร์)',
     description: 'หลังบอสล้ม ผู้เล่นบางคนเริ่มโวยวายใส่ว่าอดีตเบต้าเทสเตอร์กั๊กข้อมูลจนเดียร์เบลต้องตาย นักดาบชุดดำจึงหัวเราะเยาะแล้วประกาศยอมรับฉายา "Beater" (Beta + Cheater) ดึงความเกลียดชังทั้งหมดเข้าตัวเองเพื่อไม่ให้ผู้เล่นคนอื่นแตกคอกัน',
     choices: [
@@ -319,6 +339,8 @@ const EVENTS = [
     id: 'month2_lifepath',
     phase: 'เดือนที่ 2: ชั้น 2 ถึง 10',
     floor: 3,
+    scene: 'scene_town_street',
+    location: 'เมืองเออร์เบธ (Urbeth) ชั้นที่ 3',
     title: 'ทางแยกแห่งโชคชะตา — เลือกวิถีชีวิตของคุณ',
     description: '2,000 คนแรกเสียชีวิตไปแล้วภายในเดือนแรก ตอนนี้ผู้เล่นที่เหลือเริ่มปรับตัวได้ ประตูสู่ชั้นที่สูงขึ้นค่อยๆ ถูกเปิดออก ถึงเวลาที่คุณต้องตัดสินใจเลือกเส้นทางชีวิตที่จะใช้ใน Aincrad!',
     choices: [
@@ -360,6 +382,8 @@ const EVENTS = [
     id: 'path_frontliner_1',
     phase: 'เดือนที่ 4: ชั้น 20',
     floor: 20,
+    scene: 'scene_dungeon_corridor',
+    location: 'ดันเจี้ยนเขาวงกต ชั้นที่ 20',
     title: '[Frontliner] การบุกดันเจี้ยนเขาวงกต',
     description: 'ในฐานะกลุ่มพิชิตเกม คุณต้องลงสำรวจ Labyrinth เพื่อหาห้องบอส แต่อากาศในดันเจี้ยนเริ่มมืดลง และมีกับดักหนามโผล่ขึ้นมาสกัดทาง!',
     choices: [
@@ -383,6 +407,8 @@ const EVENTS = [
     id: 'path_solo_1',
     phase: 'เดือนที่ 4: ชั้น 18',
     floor: 18,
+    scene: 'scene_dungeon_trap',
+    location: 'ถ้ำลึกลับ ชั้นที่ 18',
     title: '[Solo] ดันเจี้ยนเดี่ยวและหีบสมบัติลึกลับ',
     description: 'คุณค้นพบห้องลับในถ้ำชั้น 18 ตรงกลางมีหีบสมบัติสีทองอร่ามตั้งอยู่ ไม่มีมอนสเตอร์เฝ้าเลยแม้แต่ตัวเดียว... มันดูผิดปกติอย่างน่าขนลุก',
     choices: [
@@ -404,8 +430,10 @@ const EVENTS = [
   // --- สาขา Merchant ---
   {
     id: 'path_merchant_1',
-    phase: 'เดือนที่ 4: ชั้น 22 หรือ 48',
+    phase: 'เดือนที่ 4: ชั้น 48',
     floor: 48,
+    scene: 'scene_lisbeth_forge',
+    location: 'เมืองลินดาร์ส (Lindarth) ชั้นที่ 48',
     title: '[Merchant] เปิดร้านตีเหล็กและจำหน่ายเสบียง',
     description: 'คุณเปิดร้านเล็กๆ ในเมือง มีผู้เล่นแนวหน้าแวะเวียนมาซื้ออุปกรณ์ วันนี้มีชายร่างใหญ่ผิวเข้ม (เอกิล) แวะมาเจรจาขอซื้อแร่เหล็ก และมีสาวน้อยนักตีดาบ (ลิซเบ็ธ) มาทักทาย',
     choices: [
@@ -429,6 +457,8 @@ const EVENTS = [
     id: 'path_refugee_1',
     phase: 'เดือนที่ 4: เมืองเริ่มต้น (Town of Beginnings)',
     floor: 1,
+    scene: 'scene_town_street',
+    location: 'ตรอกสลัมเมืองเริ่มต้น ชั้นที่ 1',
     title: '[Refugee] วันคืนอันไร้จุดหมายใน Safe Zone',
     description: 'เงิน Col ที่ติดตัวเริ่มร่อยหรอ ค่าเช่าห้องพักถูกทวงทุกสิ้นเดือน คุณนั่งมองท้องฟ้าสีครามที่ถูกขังด้วยเพดานเหล็กของชั้นที่ 2 มีผู้เล่นสมาคม "The Army" (กองทัพ) มาเดินตรวจตราและเรียกเก็บภาษีคุ้มครอง',
     choices: [
@@ -452,6 +482,8 @@ const EVENTS = [
     id: 'path_orange_1',
     phase: 'เดือนที่ 4: เขตนอกเมือง',
     floor: 25,
+    scene: 'scene_forest_poh',
+    location: 'ป่ารกทึบ ชั้นที่ 25',
     title: '[Orange] สมาชิกปริศนาจาก Laughing Coffin',
     description: 'ชายสวมหน้ากากผ้าพันคอปิดหน้าถือมีดพร้าขนาดใหญ่ นามว่า "PoH" ปรากฏตัวขึ้นพร้อมรอยยิ้มวิปริต: "ยินดีต้อนรับสู่ความจริงแห่งโลกนี้... ในเมื่อนี่คือเกมแห่งความตาย การฆ่าก็คือส่วนหนึ่งของความสนุกไม่ใช่เหรอ?"',
     choices: [
@@ -475,6 +507,8 @@ const EVENTS = [
     id: 'event_moonlit_cats',
     phase: 'เดือนที่ 5: ชั้น 27',
     floor: 27,
+    scene: 'scene_dungeon_trap',
+    location: 'ดันเจี้ยนเขาวงกต ชั้นที่ 27',
     title: 'โศกนาฏกรรมของกิลด์แมวดำใต้แสงจันทร์ (Moonlit Black Cats)',
     description: 'คุณได้ยินข่าวลือสะเทือนขวัญ: กิลด์เล็กๆ อบอุ่นที่ชื่อ "แมวดำใต้แสงจันทร์" โดนกับดัก Anti-Crystal Area ในดันเจี้ยนชั้น 27 มอนสเตอร์แห่รุมฆ่าจนสมาชิกตายยกกิลด์ รวมทั้งเด็กสาวชื่อ "ซาจิ" เหลือรอดเพียงนักดาบชุดดำคนเดียวที่ช่วยใครไว้ไม่ได้...',
     choices: [
@@ -496,6 +530,8 @@ const EVENTS = [
     id: 'event_silica_pina',
     phase: 'เดือนที่ 8: ชั้น 35 (ป่าแห่งความหลงทาง)',
     floor: 35,
+    scene: 'scene_forest_silica',
+    location: 'ป่าแห่งความหลงทาง ชั้นที่ 35',
     title: 'เด็กสาวบีสต์เทเมอร์ ซิลิก้า และมังกรขนนกพีน่า',
     description: 'ระหว่างทางในป่าชั้น 35 คุณพบเด็กสาวผู้ใช้สัตว์เลี้ยง ซิลิก้า กำลังร้องไห้กอดขนนกของ "พีน่า" มังกรน้อยที่สละชีวิตปกป้องเธอ โดยมีผู้เล่นสีส้มกลุ่ม "Titan\'s Hand" ดักล้อมเธออยู่!',
     choices: [
@@ -517,6 +553,8 @@ const EVENTS = [
     id: 'event_lisbeth_forge',
     phase: 'ปีที่ 1: ชั้น 48 (เมืองลินดาร์ส)',
     floor: 48,
+    scene: 'scene_lisbeth_forge',
+    location: 'ร้านตีเหล็กลิซเบ็ธ ชั้นที่ 48 (Lindarth)',
     title: 'ร้านตีเหล็กของ ลิซเบ็ธ (Lisbeth)',
     description: 'คุณแวะไปที่ร้านตีเหล็กของลิซเบ็ธ เธอเพิ่งกลับมาจากการผจญภัยในรังมังกรขาวกับคิริโตะ และสามารถสร้างดาบระดับ Masterpiece "Dark Repulser" ได้สำเร็จ เธอกำลังเปิดรับอัปเกรดอาวุธให้ผู้เล่น',
     choices: [
@@ -538,6 +576,8 @@ const EVENTS = [
     id: 'event_laughing_coffin_raid',
     phase: 'สิงหาคม 2024: ปราบปราม Laughing Coffin',
     floor: 35,
+    scene: 'scene_forest_poh',
+    location: 'ฐานที่มั่น Laughing Coffin ชั้นที่ 35',
     title: 'สงครามกวาดล้างกิลด์ฆาตกร Laughing Coffin',
     description: 'กลุ่มพิชิตเกมรวมพลกว่า 50 คนเพื่อบุกถล่มฐานที่มั่นลับของ Laughing Coffin หลังได้เบาะแสไส้ศึก การปะทะกันกลายเป็นสมรภูมินองเลือดระหว่างมนุษย์ด้วยกันเอง มีคนตายไปกว่า 30 คน!',
     choices: [
@@ -559,6 +599,8 @@ const EVENTS = [
     id: 'event_yui_encounter',
     phase: 'ตุลาคม 2024: ชั้น 22 (ป่าริมทะเลสาบ)',
     floor: 22,
+    scene: 'scene_lake_cottage',
+    location: 'ป่าริมทะเลสาบ ชั้นที่ 22',
     title: 'เด็กสาวปริศนาในป่า — ยุย (Yui)',
     description: 'ขณะกำลังพักผ่อนในป่าชั้น 22 ที่เงียบสงบ คุณพบเด็กหญิงตัวเล็กสวมชุดเดรสสีขาวนอนหมดสติอยู่ใต้ต้นไม้ ไม่มีหลอดเลือดและไม่มีชื่อผู้เล่นระบุอยู่เหนือหัว!',
     choices: [
@@ -571,7 +613,7 @@ const EVENTS = [
       {
         text: '🤝 นำเธอไปส่งให้คู่รักนักดาบดำกับอาสึนะที่เพิ่งซื้อบ้านพักแถวนี้ดูแลต่อ',
         effects: { sanity: +25, col: +200 },
-        feedback: 'คิริโตะและอาสึนะรับเธอไปดูแลและตั้งชื่อให้ว่า "ยุย" บรรยากาศครอบครัวของพวกเขาช่างน่าอบอุ่น',
+        feedback: 'คิริ托ะและอาสึนะรับเธอไปดูแลและตั้งชื่อให้ว่า "ยุย" บรรยากาศครอบครัวของพวกเขาช่างน่าอบอุ่น',
         nextEvent: 'event_floor74_gleameyes'
       }
     ]
@@ -580,6 +622,8 @@ const EVENTS = [
     id: 'event_floor74_gleameyes',
     phase: 'ตุลาคม 2024: ห้องบอสชั้น 74',
     floor: 74,
+    scene: 'scene_gleam_eyes',
+    location: 'ห้องบอสชั้นที่ 74 (The Gleam Eyes)',
     title: 'บอสชั้น 74 "The Gleam Eyes" & สุดยอดวิชาดาบคู่',
     description: 'กองกำลังของ The Army ฝืนบุกเข้าไปในห้องบอสชั้น 74 ที่เป็นโซนห้ามใช้คริสตัลวาร์ป โดนปิศาจปีศาจยักษ์ตาสีฟ้า "The Gleam Eyes" ถือดาบยักษ์ไล่ฟาดจนตายเกลื่อน! กองหน้าทุกคนกำลังตกอยู่ในอันตรายถึงชีวิต!',
     choices: [
@@ -601,6 +645,8 @@ const EVENTS = [
     id: 'event_floor75_skullreaper',
     phase: '7 พฤศจิกายน 2024: ห้องบอสชั้น 75',
     floor: 75,
+    scene: 'scene_skull_reaper',
+    location: 'ห้องบอสชั้นที่ 75 (The Skull Reaper)',
     title: 'บอสชั้น 75 "The Skull Reaper" & จุดสิ้นสุดของความเงียบงัน',
     description: 'โครงกระดูกตะขาบยักษ์ The Skull Reaper ฟาดเคียวกระดูกสังหารผู้เล่นแนวหน้าตายในฮิตเดียวไปหลายคน! ฮีธคลิฟฟ์ หัวหน้ากิลด์ KoB ยืนปักหลักใช้โล่กางเขนยักษ์ต้านทานไว้ได้อย่างสมบูรณ์แบบจนเอาชนะบอสได้ แต่หลังจบศึก คิริโตะกลับชี้ดาบไปที่ฮีธคลิฟฟ์: "หลอดเลือดของคุณไม่เคยลดต่ำกว่าโซนสีเหลืองเลยแม้แต่ครั้งเดียว... คุณคือ คายาบะ อากิฮิโกะ ใช่ไหม?"',
     choices: [
@@ -622,6 +668,8 @@ const EVENTS = [
     id: 'event_final_duel',
     phase: '7 พฤศจิกายน 2024: การดวลตัดสิน',
     floor: 75,
+    scene: 'scene_aincrad_collapse',
+    location: 'ปราสาทลอยฟ้า Aincrad ชั้นที่ 75',
     title: 'ดาบสุดท้ายและการพังทลายของปราสาท Aincrad',
     description: 'การดวลอันดุเดือดระหว่างคิริโตะและคายาบะ ดาบของคิริโตะหักสะบั้น แต่ด้วยพลังใจที่ก้าวข้ามระบบ ร่างที่โปร่งแสงของเขาสามารถแทงดาบทะลุอกของคายาบะได้สำเร็จ! เสียงประกาศดังก้องไปทั่วทั้ง 100 ชั้น: [Game Cleared! 7 พ.ย. 2024 เวลา 14:55 น.] ปราสาท Aincrad กำลังพังทลายลงสู่ผืนฟ้า!',
     choices: [
@@ -643,6 +691,7 @@ const ENDINGS = [
   {
     id: 'end_boar_day2',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '💀 สังเวยหมูป่าในวันที่ 2',
     icon: '🐗',
     condition: (p) => p.hp <= 0 && p.floor === 1,
@@ -651,6 +700,7 @@ const ENDINGS = [
   {
     id: 'end_nervegear_pulled',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '⚡ เหยื่อคลื่นไมโครเวฟจากการถอดหมวก',
     icon: '🔌',
     condition: (p) => p.sanity <= 0 && p.floor === 1,
@@ -659,6 +709,7 @@ const ENDINGS = [
   {
     id: 'end_trap_chest_sachi',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '🪤 กับดัก Anti-Crystal แห่งชั้น 27',
     icon: '📦',
     condition: (p) => p.hp <= 0 && p.floor >= 20 && p.floor <= 30,
@@ -667,6 +718,7 @@ const ENDINGS = [
   {
     id: 'end_coper_pk',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '🐍 เหยื่อสังเวยของ Coper',
     icon: '☠️',
     condition: (p) => p.hp <= 0 && p.background === 'newbie',
@@ -675,6 +727,7 @@ const ENDINGS = [
   {
     id: 'end_no_teleport_crystal',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '💎 ลืมซื้อคริสตัลเทเลพอร์ต',
     icon: '🏃',
     condition: (p) => p.hp <= 0 && p.col < 100,
@@ -685,6 +738,7 @@ const ENDINGS = [
   {
     id: 'end_illfang_halberd',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '🪓 คมดาบโค้งของ Illfang',
     icon: '👹',
     condition: (p) => p.hp <= 0 && p.floor === 1,
@@ -693,6 +747,7 @@ const ENDINGS = [
   {
     id: 'end_gleam_eyes_crush',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '👁️ ถูกเหยียบขยี้โดย The Gleam Eyes',
     icon: '👹',
     condition: (p) => p.hp <= 0 && p.floor >= 70 && p.floor <= 74,
@@ -701,6 +756,7 @@ const ENDINGS = [
   {
     id: 'end_skull_reaper_scythe',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '💀 เคียวกระดูกของ The Skull Reaper',
     icon: '🦂',
     condition: (p) => p.hp <= 0 && p.floor >= 75,
@@ -709,6 +765,7 @@ const ENDINGS = [
   {
     id: 'end_laughing_coffin_victim',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '🩸 ตกเป็นเหยื่อของ Laughing Coffin',
     icon: '⚰️',
     condition: (p) => p.hp <= 0 && p.sanity < 30,
@@ -717,6 +774,7 @@ const ENDINGS = [
   {
     id: 'end_army_reckless_raid',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '🎖️ สังเวยให้ความไร้ประสิทธิภาพของ The Army',
     icon: '💥',
     condition: (p) => p.hp <= 0 && p.courage < 30,
@@ -727,6 +785,7 @@ const ENDINGS = [
   {
     id: 'end_monument_despair',
     type: 'bad',
+    scene: 'scene_black_iron_palace',
     title: '🗿 สิ้นหวังหน้าอนุสาวรีย์แห่งชีวิต',
     icon: '🪨',
     condition: (p) => p.sanity <= 0,
@@ -735,6 +794,7 @@ const ENDINGS = [
   {
     id: 'end_safe_zone_bankrupt',
     type: 'bad',
+    scene: 'scene_town_street',
     title: '🏚️ ขอทานผู้หิวโซแห่งเมืองเริ่มต้น',
     icon: '🥣',
     condition: (p) => p.col <= 0 && p.sanity <= 20,
@@ -743,6 +803,7 @@ const ENDINGS = [
   {
     id: 'end_keita_fall',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '🕊️ กระโดดจากขอบปราสาท Aincrad',
     icon: '☁️',
     condition: (p) => p.sanity <= 5 && p.courage <= 10,
@@ -753,6 +814,7 @@ const ENDINGS = [
   {
     id: 'end_black_iron_prison',
     type: 'bad',
+    scene: 'scene_black_iron_palace',
     title: '⛓️ นักโทษตลอดกาลแห่ง Black Iron Palace',
     icon: '🗝️',
     condition: (p) => p.path === 'orange' && p.sanity < 40,
@@ -761,6 +823,7 @@ const ENDINGS = [
   {
     id: 'end_betrayed_by_poh',
     type: 'bad',
+    scene: 'scene_grave_gameover',
     title: '🔪 โดน PoH เชือดทิ้งแก้เบื่อ',
     icon: '🩸',
     condition: (p) => p.path === 'orange' && p.courage < 30,
@@ -771,6 +834,7 @@ const ENDINGS = [
   {
     id: 'end_floor22_cottage',
     type: 'peaceful',
+    scene: 'scene_lake_cottage',
     title: '🏡 ชีวิตสงบสุขริมทะเลสาบชั้น 22',
     icon: '🌲',
     condition: (p) => p.col >= 1000 && p.sanity >= 70 && p.path !== 'frontliner',
@@ -779,6 +843,7 @@ const ENDINGS = [
   {
     id: 'end_fuurinkazan_bro',
     type: 'peaceful',
+    scene: 'scene_town_street',
     title: '🏮 สหายแท้แห่งกิลด์ฟูรินคาซัน',
     icon: '🍶',
     condition: (p) => p.courage >= 60 && p.sanity >= 60 && p.col >= 400,
@@ -787,6 +852,7 @@ const ENDINGS = [
   {
     id: 'end_church_guardian',
     type: 'peaceful',
+    scene: 'scene_town_street',
     title: '🕊️ ผู้พิทักษ์โบสถ์เลี้ยงเด็ก',
     icon: '⛪',
     condition: (p) => p.path === 'refugee' && p.sanity >= 50,
@@ -795,6 +861,7 @@ const ENDINGS = [
   {
     id: 'end_nameless_survivor',
     type: 'peaceful',
+    scene: 'scene_hospital_bed',
     title: '👤 ผู้รอดชีวิตไร้ชื่อเสียง',
     icon: '🚶',
     condition: (p) => p.hp > 0 && p.sanity > 30,
@@ -805,6 +872,7 @@ const ENDINGS = [
   {
     id: 'end_king_of_col',
     type: 'good',
+    scene: 'scene_lisbeth_forge',
     title: '💰 ราชาแห่งการค้าแห่ง Aincrad',
     icon: '👑',
     condition: (p) => p.col >= 2000,
@@ -813,6 +881,7 @@ const ENDINGS = [
   {
     id: 'end_lisbeth_successor',
     type: 'good',
+    scene: 'scene_lisbeth_forge',
     title: '🔨 ช่างตีดาบระดับตำนาน (ศิษย์เอกของลิซเบ็ธ)',
     icon: '⚔️',
     condition: (p) => p.path === 'merchant' && p.col >= 1000,
@@ -821,6 +890,7 @@ const ENDINGS = [
   {
     id: 'end_master_chef',
     type: 'good',
+    scene: 'scene_lake_cottage',
     title: '🍳 สุดยอดเชฟระดับ Max Skill (ชั้น 8 อาหาร)',
     icon: '🍖',
     condition: (p) => p.path === 'merchant' && p.sanity >= 80,
@@ -831,6 +901,7 @@ const ENDINGS = [
   {
     id: 'end_hero_of_aincrad',
     type: 'legend',
+    scene: 'scene_hospital_bed',
     title: '🏆 วีรบุรุษผู้พิชิต Aincrad',
     icon: '🌟',
     condition: (p) => p.path === 'frontliner' && p.courage >= 80 && p.hp > 50,
@@ -839,6 +910,7 @@ const ENDINGS = [
   {
     id: 'end_last_attack_champion',
     type: 'legend',
+    scene: 'scene_hospital_bed',
     title: '🎯 จอมชิง Last Attack Bonus',
     icon: '⚡',
     condition: (p) => p.courage >= 90 && p.col >= 800,
@@ -847,6 +919,7 @@ const ENDINGS = [
   {
     id: 'end_yui_heart',
     type: 'legend',
+    scene: 'scene_lake_cottage',
     title: '💖 ผู้อารักขาดวงใจของยุย (Yui\'s Heart)',
     icon: '🧚',
     condition: (p) => p.sanity >= 90 && p.courage >= 70,
@@ -855,6 +928,7 @@ const ENDINGS = [
   {
     id: 'end_proud_beater',
     type: 'legend',
+    scene: 'scene_hospital_bed',
     title: '🌟 Beater ผู้กอบกู้',
     icon: '🖤',
     condition: (p) => p.background === 'beta_tester' && p.courage >= 70,
@@ -863,6 +937,7 @@ const ENDINGS = [
   {
     id: 'end_ghost_solo',
     type: 'good',
+    scene: 'scene_hospital_bed',
     title: '🐺 นักดาบพเนจรเงาพราย (Ghost Solo)',
     icon: '🌑',
     condition: (p) => p.path === 'solo' && p.courage >= 60,

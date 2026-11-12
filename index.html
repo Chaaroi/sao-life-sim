@@ -146,26 +146,51 @@
         </div>
       </div>
 
-      <!-- Story Narrative Box -->
-      <div class="story-panel">
-        <span id="story-phase" class="phase-badge">วันที่ 1: 6 พ.ย. 2022</span>
-        <h2 id="story-title" class="story-title">...</h2>
-        <p id="story-desc" class="story-desc">...</p>
-
-        <!-- Choices Container -->
-        <div id="choices-box" class="choices-container"></div>
-
-        <!-- Feedback Alert Box -->
-        <div id="feedback-box" class="feedback-box">
-          <p id="feedback-text" class="feedback-text">...</p>
-          <button id="next-btn" class="next-btn">ดำเนินชีวิตต่อไป... ▶</button>
+      <!-- Split 2-Column Simulator Layout (Pixel Art Left, Story Narrative Right) -->
+      <div class="sim-grid-layout">
+        
+        <!-- Left: Pixel Art Canvas Frame -->
+        <div class="pixel-frame-card">
+          <div class="pixel-canvas-wrapper">
+            <canvas id="pixel-canvas"></canvas>
+            <div class="pixel-scanlines"></div>
+          </div>
+          <div class="pixel-location-bar">
+            <div id="pixel-location-name" class="pixel-location-title">
+              📍 จัตุรัสกลางเมืองเริ่มต้น (Town of Beginnings)
+            </div>
+            <div id="pixel-floor-tag" class="pixel-status-badge">
+              FLOOR 1
+            </div>
+          </div>
         </div>
+
+        <!-- Right: Story Narrative Box -->
+        <div class="story-panel">
+          <span id="story-phase" class="phase-badge">วันที่ 1: 6 พ.ย. 2022</span>
+          <h2 id="story-title" class="story-title">...</h2>
+          <p id="story-desc" class="story-desc">...</p>
+
+          <!-- Choices Container -->
+          <div id="choices-box" class="choices-container"></div>
+
+          <!-- Feedback Alert Box -->
+          <div id="feedback-box" class="feedback-box">
+            <p id="feedback-text" class="feedback-text">...</p>
+            <button id="next-btn" class="next-btn">ต่อไป ▶</button>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- 4. Ending Screen -->
     <section id="screen-ending" class="screen">
       <div class="ending-panel">
+        <div class="pixel-canvas-wrapper" style="max-width:480px; margin:0 auto 20px auto; border-radius:6px; border:1px solid rgba(255,119,0,0.4);">
+          <canvas id="ending-pixel-canvas"></canvas>
+          <div class="pixel-scanlines"></div>
+        </div>
         <div id="ending-icon" class="ending-icon">💀</div>
         <div>
           <span id="ending-badge" class="ending-type-badge badge-bad">BAD END</span>
@@ -199,6 +224,7 @@
 
   <!-- Scripts -->
   <script src="data/story.js"></script>
+  <script src="pixelRenderer.js"></script>
   <script src="game.js"></script>
 </body>
 </html>

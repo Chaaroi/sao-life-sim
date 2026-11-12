@@ -157,6 +157,10 @@ const el = {
   feedbackText: document.getElementById('feedback-text'),
   nextBtn: document.getElementById('next-btn'),
 
+  // Pixel Renderer Elements
+  pixelLocationName: document.getElementById('pixel-location-name'),
+  pixelFloorTag: document.getElementById('pixel-floor-tag'),
+
   // Ending Screen
   endingIcon: document.getElementById('ending-icon'),
   endingBadge: document.getElementById('ending-badge'),
@@ -244,6 +248,23 @@ function updateHUD() {
   el.hudFloor.textContent = `ชั้น ${player.floor}`;
 }
 
+// Pixel Art Renderers
+let mainPixelRenderer = null;
+let endingPixelRenderer = null;
+
+function initRenderers() {
+  if (!mainPixelRenderer && document.getElementById('pixel-canvas')) {
+    try {
+      mainPixelRenderer = new PixelRenderer('pixel-canvas');
+    } catch(e) {}
+  }
+  if (!endingPixelRenderer && document.getElementById('ending-pixel-canvas')) {
+    try {
+      endingPixelRenderer = new PixelRenderer('ending-pixel-canvas');
+    } catch(e) {}
+  }
+}
+
 // Load Story Event
 let pendingNextEvent = null;
 
@@ -257,6 +278,17 @@ function loadEvent(eventId) {
   player.currentEventId = ev.id;
   if (ev.floor) player.floor = ev.floor;
   updateHUD();
+
+  initRenderers();
+  if (mainPixelRenderer && ev.scene) {
+    mainPixelRenderer.setScene(ev.scene);
+  }
+  if (el.pixelLocationName) {
+    el.pixelLocationName.textContent = '📍 ' + (ev.location || 'ปราสาทลอยฟ้า Aincrad');
+  }
+  if (el.pixelFloorTag) {
+    el.pixelFloorTag.textContent = 'FLOOR ' + (ev.floor || player.floor);
+  }
 
   el.storyPhase.textContent = ev.phase;
   el.storyTitle.textContent = ev.title;
@@ -346,6 +378,11 @@ function triggerGameEnding() {
   }
 
   saveUnlockedEnding(matchedEnding.id);
+
+  initRenderers();
+  if (endingPixelRenderer && matchedEnding.scene) {
+    endingPixelRenderer.setScene(matchedEnding.scene);
+  }
 
   if (matchedEnding.type === 'bad') {
     sfx.death();
